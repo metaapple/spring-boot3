@@ -12,6 +12,7 @@ public class UserController2 {
    @Autowired
    private JdbcTemplate jdbcTemplate;
 
+
     @GetMapping("/")
     public String hello() {
         return "<body bgcolor=yellow>changed!!!! -------</body>";
