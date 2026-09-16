@@ -26,14 +26,14 @@ public class UserController2 {
 
  //table생성
  //member(id, pw)
- //select id from member;
+ //select pw from member where id = 'apple';
     @GetMapping("/mysql2")
     public String dbTest2() {
         try {
 
-            String sql = "SELECT now()";
+            String sql = "select pw from member where id = 'apple'";
             String result = jdbcTemplate.queryForObject(sql, String.class);
-            return "Database test successful. now() : " + result;
+            return "Database test successful. : " + result;
         } catch (Exception e) {
             e.printStackTrace();
             return "Database connection failed! Error: " + e.getMessage();
