@@ -16,6 +16,7 @@ public class UserController2 {
     public String hello() {
         return "<body bgcolor=yellow>changed!!!! -------</body>";
     }
+    
 
     @GetMapping("/mysql")
     public String dbTest() {
