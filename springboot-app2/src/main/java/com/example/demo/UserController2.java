@@ -17,7 +17,27 @@ public class UserController2 {
         return "<body bgcolor=yellow>changed!!!! -------</body>";
     }
 
-    
+// /red, get요청시 배경화면 red인 html이 보이게!!
+    @GetMapping("/red")
+    public String hello2() {
+        return "<body bgcolor=red>red page!!!! -------</body>";
+    }
+
+ //table생성
+ //member(id, pw)
+ //select id from member;
+    @GetMapping("/mysql2")
+    public String dbTest2() {
+        try {
+
+            String sql = "SELECT now()";
+            String result = jdbcTemplate.queryForObject(sql, String.class);
+            return "Database test successful. now() : " + result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Database connection failed! Error: " + e.getMessage();
+        }
+    }
 
     @GetMapping("/mysql")
     public String dbTest() {
